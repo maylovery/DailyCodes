@@ -12,6 +12,7 @@
         7.适配移动端
         8.界面UICS 
       </p>
+      <div @click.native="gotext">跳转到测试</div>
     </section>
   </div>
 </template>
@@ -22,6 +23,11 @@ export default {
     return {
        
     }
+  },
+  methods:{
+      gotext(){
+        this.$router.push('/test')
+      }
   }
 }
 </script>
