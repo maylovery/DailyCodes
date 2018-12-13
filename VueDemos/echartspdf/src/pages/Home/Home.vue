@@ -1,5 +1,5 @@
 <template>
-  <div class="root">
+  <div class="hello">
     <div>FirrstDemo</div>
     <section>
       <p>
