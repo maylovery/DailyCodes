@@ -50,11 +50,11 @@ import { Loading } from 'element-ui';
 
 import OperatTimely from './components/OperatTimely'
 import CenterTwoPie from './components/CenterTwoPie'
+import TwoPieExcell from './components/TwoPieExcell'
 
 import BottomExcel1 from './components/BottomExcel1'
 import BottomExcel2 from './components/BottomExcel2'
 import BottomExcel3 from './components/BottomExcel3'
-import TwoPieExcell from './components/TwoPieExcell'
 
 
 export default {
@@ -79,11 +79,12 @@ export default {
         // 不！能！获取组件实例 `this`
         // 因为当守卫执行前，组件实例还没被创建
         var userInfo =  JSON.parse(localStorage.getItem("userInfo"))
-        if (userInfo && userInfo.pageY) {
-            next()
-        }else{
-            alert('抱歉，您没有查看此报告的权限')
-        }
+        // if (userInfo && userInfo.pageY) {
+        //     next()
+        // }else{
+        //     alert('抱歉，您没有查看此报告的权限')
+        // }
+        next()
 
     },
     mounted(){
