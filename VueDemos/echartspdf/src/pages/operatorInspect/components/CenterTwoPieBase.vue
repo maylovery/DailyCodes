@@ -55,7 +55,7 @@
     </div>
 </template>
 <script>
-import NoData from '../../../components/NoData'
+import NoData from '../../Common/NoData'
 import echarts from '../../../../node_modules/echarts'
 
 

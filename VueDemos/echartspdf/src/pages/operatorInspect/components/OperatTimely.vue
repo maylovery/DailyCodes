@@ -30,7 +30,7 @@
 
 <script>
 import echarts from '../../../../node_modules/echarts'
-import NoData from '../../../components/NoData'
+import NoData from '../../Common/NoData'
 
 export default {
     data(){

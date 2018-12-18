@@ -25,7 +25,7 @@
     </div>
 </template>
 <script>
-import NoData from '../../../components/NoData'
+import NoData from '../../Common/NoData'
 
 export default {
     data(){
