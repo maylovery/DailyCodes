@@ -11,19 +11,19 @@
                      <tr>
                         <th></th>
                         <th>
-                            <img class="zhuimg" src="@images/report/signal_gang.png">
+                            <!-- <img class="zhuimg" src="@images/report/signal_gang.png"> -->
                             刚信号
                         </th>
                         <th>
-                            <img class="zhuimg" src="@images/report/signal_qiang.png">
+                            <!-- <img class="zhuimg" src="@images/report/signal_qiang.png"> -->
                             强信号
                         </th>
                         <th>
-                            <img class="zhuimg" src="@images/report/signal_zhong.png">
+                            <!-- <img class="zhuimg" src="@images/report/signal_zhong.png"> -->
                             中信号
                         </th>
                         <th>
-                            <img class="zhuimg" src="@images/report/signal_ruo.png">
+                            <!-- <img class="zhuimg" src="@images/report/signal_ruo.png"> -->
                             弱信号 
                         </th>
                     </tr>

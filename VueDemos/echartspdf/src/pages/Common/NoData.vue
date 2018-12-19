@@ -1,6 +1,7 @@
 <template>
     <div class="nodata-root">
-        <img src="@images/no_data.png">
+        <!-- <img src="@images/no_data.png"> -->
+        <!-- <img src="@/assets/images/no_data.png">         -->
         <div>
             <slot class="tipsname">暂无数据</slot>
         </div>

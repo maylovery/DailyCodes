@@ -14,16 +14,16 @@
                         <th rowspan="2">持仓客户</th>
                         <th colspan="3">
                             预警属实率
-                            <img class="zhuimg" src="@images/report/report_zhu1.png">
+                            <!-- <img class="zhuimg" src="@images/report/report_zhu1.png"> -->
                         </th>
                         <th colspan="2">预警生效率
-                            <img class="zhuimg"   src="@images/report/report_zhu2.png">
+                            <!-- <img class="zhuimg"   src="@images/report/report_zhu2.png"> -->
                         </th>
                         <th colspan="3">预警漏报风险客户
-                            <img class="zhuimg"  src="@images/report/report_zhu3.png">
+                            <!-- <img class="zhuimg"  src="@images/report/report_zhu3.png"> -->
                         </th>
                         <th colspan="3">预警漏报出险客户
-                            <img class="zhuimg"  src="@images/report/report_zhu3.png">
+                            <!-- <img class="zhuimg"  src="@images/report/report_zhu3.png"> -->
                         </th>
 
                     </tr>
@@ -66,13 +66,13 @@
             </table>
             <div class="buttoptip">
                 <span>
-                    <img class="zhuimg" src="@images/report/report_zhu1.png">
+                    <!-- <img class="zhuimg" src="@images/report/report_zhu1.png"> -->
                     属实率的本年累计数据期间为2018-01至2019-10</span>
                 <span>
-                    <img class="zhuimg" src="@images/report/report_zhu2.png">
+                    <!-- <img class="zhuimg" src="@images/report/report_zhu2.png"> -->
                     生效率表现期为90天，本年累计数据期间为2018-01至2019-07</span>
                 <span>
-                    <img class="zhuimg" src="@images/report/report_zhu3.png">
+                    <!-- <img class="zhuimg" src="@images/report/report_zhu3.png"> -->
                     漏报率回溯期为90天，本年累计数据期间为2018-01至2019-10
                 </span>
             </div>
