@@ -55,7 +55,10 @@ export default {
     components: {
         NoData
     },
-    mounted(){},
+    mounted(){
+        this.loadRequest1()
+        this.loadLocal1()
+    },
     methods:{
         // 请求柱状图的数据 2018-04-30
         loadRequest1(){
@@ -82,7 +85,7 @@ export default {
                 xdata: resData.map(obj => obj.name),
                 barData:resData.map(obj => obj.value) 
             }
-            self.setBarChar()
+            this.setBarChar()
         },
         setBarChar(){
             var theDiv1 = this.$refs.topChar

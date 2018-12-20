@@ -13,6 +13,7 @@
         8.界面UICS 
       </p>
       <div @click="gotext">跳转到learn测试</div>
+      <div @click="goreport1">跳转到report1</div>
     </section>
   </div>
 </template>
@@ -27,6 +28,9 @@ export default {
   methods:{
       gotext(){
         this.$router.push('/test')
+      },
+      goreport1(){
+         this.$router.push('/inspectReport')
       }
   }
 }

@@ -1,0 +1,4 @@
+/*下拉框样式*/
+.el-select-dropdown.el-popper.is-multiple {
+  min-width: 100px !important;
+}

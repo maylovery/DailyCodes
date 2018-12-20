@@ -159,12 +159,13 @@ export default {
 
         },
         getTimePramas() {            
-            var urls = window.location.href; //获取url中"?"符后的字串
-            if (urls.indexOf("?") != -1) {    //判断是否有参数
-                var str = urls.substring(urls.indexOf("=")+1)
-                this.valuationDate = str.substring(0,10)
-            }
-            console.log('日期'+ this.valuationDate.substring(0,1))
+            // var urls = window.location.href; //获取url中"?"符后的字串
+            // if (urls.indexOf("?") != -1) {    //判断是否有参数
+            //     var str = urls.substring(urls.indexOf("=")+1)
+            //     this.valuationDate = str.substring(0,10)
+            // }
+            // console.log('日期'+ this.valuationDate.substring(0,1))
+            this.valuationDate = "2018-08"
             this.loadLocal()
         },
         loadLocal(){
