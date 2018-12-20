@@ -30,20 +30,16 @@ import NoData from '../../Common/NoData'
 export default {
     data(){
         return {
-             dateTime:'',
+             dateTime:'2019-02',
             //  resData:{}
              cellDatas:[],
              cellTitles:['','寿险','产险','养老险','健康保险','银行','租赁','陆金所','资产管理','证券','信托','基金','不动产','海外控股','创投'],
         }
     },
     props:['valuationDate'],
-    watch:{
-      valuationDate(newValue,oldValue){
-          if(newValue){
-              this.loadLocal()
-          }
-      }
-    },
+    mounted(){
+        this.loadLocal()
+    },  
     components: {
         NoData
     },

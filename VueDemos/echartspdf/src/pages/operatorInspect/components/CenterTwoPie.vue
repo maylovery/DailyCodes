@@ -17,7 +17,7 @@ export default {
     
     data(){
         return {
-             dateTime:'',
+             dateTime:'2018-09',
              chardatas:{
                  left:{},
                  right:{}
@@ -28,12 +28,8 @@ export default {
         CenterTwoPieBase
     },
     props:['valuationDate'],
-    watch:{
-        valuationDate(newValue,oldValue){
-            if(newValue){
-                this.loadLocal()
-            }
-        }
+    mounted(){
+        this.loadLocal()
     },
      methods:{
         loadLocal(){

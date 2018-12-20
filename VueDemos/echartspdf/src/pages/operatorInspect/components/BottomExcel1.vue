@@ -88,22 +88,18 @@ import NoData from '../../Common/NoData'
 export default {
     data(){
         return {
-             dateTime:'',
+             dateTime:'2019-01',
              cellDatas:[]
         }
     },
     props:['valuationDate'],
-    watch:{
-      valuationDate(newValue,oldValue){
-          if(newValue){
-              this.loadLocal()
-          }
-      }
-    },
+    
     components: {
         NoData
     },
-    mounted(){},
+    mounted(){
+        this.loadLocal()
+    },
     methods:{
         loadLocal(){
              var resData =  [

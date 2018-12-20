@@ -55,12 +55,8 @@ export default {
         }
     },
     props:['valuationDate'],
-    watch:{
-      valuationDate(newValue,oldValue){
-          if(newValue){
-              this.loadRequest2()            
-          }
-      }
+    mounted(){
+         this.loadRequest2() 
     },
     methods:{
         // 请求表格详细数据
@@ -84,8 +80,8 @@ export default {
                 {"name":"创投","planNum":"0","planNumHandle":"0","reportNum":"0","reportNumHandle":"0","riskExemptNum":"0","riskNum":"1","riskNumFeedback":"0","timelines":"0","valuationDate":"2018-10"},
                 {"name":"全集团侧","planNum":"19","planNumHandle":"13","reportNum":"32","reportNumHandle":"32","riskExemptNum":"0","riskNum":"3753","riskNumFeedback":"1058","timelines":"29","valuationDate":"2018-10"}]
             }
-
-            this.cellDatas = resData.map(function(obj){
+            var temp1 = resData.data
+            this.cellDatas = temp1.map(function(obj){
                 return {
                     name:obj.name,
                     key1:(obj.timelines) ? obj.timelines : '-', // 运营及时性比率

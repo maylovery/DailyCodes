@@ -35,23 +35,13 @@ import NoData from '../../Common/NoData'
 export default {
     data(){
         return{
-            dateTime:'',
+            dateTime:'2018-01',
             charData:{},
             linedatas:{},
             hasData:true
         }
     },
     props:['valuationDate'],
-    watch:{
-      valuationDate(newValue,oldValue){
-          if(newValue){
-               this.hasData = true
-              this.loadRequest1()
-
-              this.loadLocal1()
-          }
-      }
-    },
     components: {
         NoData
     },
@@ -80,10 +70,11 @@ export default {
                 {"code":"3009","name":"创投","valuationdate":"2018-10","value":"0"},
                 {"code":"s9999","name":"全集团侧","valuationdate":"2018-10","value":"29"}]
             }
-            resData = resData.filter(obj => obj.value)
+            var data  = resData.data
+            var temp2 = data.filter(obj => obj.value)
             this.charData = {
-                xdata: resData.map(obj => obj.name),
-                barData:resData.map(obj => obj.value) 
+                xdata: temp2.map(obj => obj.name),
+                barData:temp2.map(obj => obj.value) 
             }
             this.setBarChar()
         },

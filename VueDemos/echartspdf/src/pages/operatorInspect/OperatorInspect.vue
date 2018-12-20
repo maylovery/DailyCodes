@@ -149,7 +149,7 @@ export default {
                 var imgWidth = 841.89;
                 var imgHeight = 841.89/width * height;
                 var posionY = (index == 2 ) ? 20 : 0 
-                pdf.addImage(pageData, 'JPEG', 50, posionY, imgWidth, imgHeight );
+                pdf.addImage(pageData, 'JPEG', 0, 20, imgWidth, imgHeight );
                 if (index == count-1){
                     pdf.save('运营检视报告' + self.valuationDate.substring(0,7) + '.pdf');
                 }else  {
