@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>one</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <script src="./jquery-1.12.4.js"></script>
+</head>
+<body>
+    
+    <!-- 匿名函数自调用  -->
+    <section class="section1"> 
+        <ul id="list">
+            <li>11</li>
+            <li>22</li>
+            <li>34</li>
+            <li>332</li>
+            <li>112</li>
+            <li class="green yellow">6</li>
+        </ul>
+    </section>
+    
+    <hr>
+    <!-- JS 下动态展示与设置内容 -->
+    <section class="section2">
+        <input type="button" value="展示" id="btn1">
+        <input type="button" value="设置内容" id="btn2">
+    
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
+    
+    <hr>
+    <!-- 一级二级菜单显示 -->
+    <section class="section3">
+        <ul>
+            <li>
+                <a href="javascript:void(0);">一级菜单1</a>
+                <ul class="ul">
+                    <li><a href="javascript:void(0);">二级菜单11</a></li>
+                    <li><a href="javascript:void(0);">二级菜单12</a></li>
+                    <li><a href="javascript:void(0);">二级菜单13</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:void(0);">一级菜单2</a>
+                <ul>
+                    <li><a href="javascript:void(0);">二级菜单21</a></li>
+                    <li><a href="javascript:void(0);">二级菜单22</a></li>
+                    <li><a href="javascript:void(0);">二级菜单23</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:void(0);">一级菜单3</a>
+                <ul>
+                    <li><a href="javascript:void(0);">二级菜单31</a></li>
+                    <li><a href="javascript:void(0);">二级菜单32</a></li>
+                    <li><a href="javascript:void(0);">二级菜单33</a></li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+    
+    <hr>
+    <!-- 突出显示图片hover -->
+    <section class="section4">
+        <ul>
+            <li><a href="#"><img src="images/01.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="images/02.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="images/03.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="images/04.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="images/05.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="images/06.jpg" alt=""/></a></li>
+        </ul>
+    </section>
+
+    <hr>
+    <!-- 手风琴案例 -->
+    <section class="section5">
+        <ul class="parentWrap">
+            <li class="menuGroup">
+                <span class="groupTitle">标题1</span>
+                <div>我是弹出来的div1</div>
+            </li>
+            <li class="menuGroup">
+                <span class="groupTitle">标题2</span>
+                <div>我是弹出来的div2</div>
+            </li>
+            <li class="menuGroup">
+                <span class="groupTitle">标题3</span>
+                <div>我是弹出来的div3</div>
+            </li>
+            <li class="menuGroup">
+                <span class="groupTitle">标题4</span>
+                <div>我是弹出来的div4</div>
+            </li>
+        </ul>
+    </section>
+   
+    <hr>
+    <!-- 淘宝精品案例 -->
+    <section class="section6">
+        <div class="wrapper">
+            <ul id="left">
+                <li><a href="#">女靴</a></li>
+                <li><a href="#">雪地靴</a></li>
+                <li><a href="#">冬裙</a></li>
+                <li><a href="#">呢大衣</a></li>
+                <li><a href="#">毛衣</a></li>
+                <li><a href="#">棉服</a></li>
+                <li><a href="#">女裤</a></li>
+                <li><a href="#">羽绒服</a></li>
+                <li><a href="#">牛仔裤</a></li>
+            </ul>
+            <ul id="center">
+                <li><a href="#"><img src="images/女靴.jpg" width="200" height="250"/></a></li>
+                <li><a href="#"><img src="images/雪地靴.jpg" width="200" height="250"/></a></li>
+                <li><a href="#"><img src="images/冬裙.jpg" width="200" height="250"/></a></li>
+                <li><a href="#"><img src="images/呢大衣.jpg" width="200" height="250"/></a></li>
+                <li><a href="#"><img src="images/毛衣.jpg" width="200" height="250"/></a></li>
+                <li><a href="#"><img src="images/棉服.jpg" width="200" height="250"/></a></li>
+                <li><a href="#"><img src="images/女裤.jpg" width="200" height="250"/></a></li>
+                <li><a href="#"><img src="images/羽绒服.jpg" width="200" height="250"/></a></li>
+                <li><a href="#"><img src="images/牛仔裤.jpg" width="200" height="250"/></a></li>
+                <li><a href="#"><img src="images/女包.jpg" width="200" height="250"/></a></li>
+                <li><a href="#"><img src="images/男靴.jpg" width="200" height="250"/></a></li>
+                <li><a href="#"><img src="images/登山鞋.jpg" width="200" height="250"/></a></li>
+                <li><a href="#"><img src="images/皮带.jpg" width="200" height="250"/></a></li>
+                <li><a href="#"><img src="images/围巾.jpg" width="200" height="250"/></a></li>
+                <li><a href="#"><img src="images/皮衣.jpg" width="200" height="250"/></a></li>
+                <li><a href="#"><img src="images/男毛衣.jpg" width="200" height="250"/></a></li>
+                <li><a href="#"><img src="images/男棉服.jpg" width="200" height="250"/></a></li>
+                <li><a href="#"><img src="images/男包.jpg" width="200" height="250"/></a></li>
+            
+            </ul>
+            <ul id="right">
+                <li><a href="#">女包</a></li>
+                <li><a href="#">男靴</a></li>
+                <li><a href="#">登山鞋</a></li>
+                <li><a href="#">皮带</a></li>
+                <li><a href="#">围巾</a></li>
+                <li><a href="#">皮衣</a></li>
+                <li><a href="#">男毛衣</a></li>
+                <li><a href="#">男棉服</a></li>
+                <li><a href="#">男包</a></li>
+            </ul>    
+        </div>
+    </section>
+    
+    <hr>
+    <!-- 京东呼吸灯 -->
+    <section class="section7">
+            <div class="slider">
+                <ul>
+                    <li><a href="#"><img src="images/01/1.jpg" alt=""></a></li>
+                    <li><a href="#"><img src="images/01/2.jpg" alt=""></a></li>
+                    <li><a href="#"><img src="images/01/3.jpg" alt=""></a></li>
+                    <li><a href="#"><img src="images/01/4.jpg" alt=""></a></li>
+                    <li><a href="#"><img src="images/01/5.jpg" alt=""></a></li>
+                    <li><a href="#"><img src="images/01/6.jpg" alt=""></a></li>
+                    <li><a href="#"><img src="images/01/7.jpg" alt=""></a></li>
+                    <li><a href="#"><img src="images/01/8.jpg" alt=""></a></li>
+                </ul>
+                <!--箭头-->
+                <div class="arrow">
+                    <span class="arrow-left">&lt;</span>
+                    <span class="arrow-right">&gt;</span>
+                </div>
+          </div>
+    </section>
+</body>
+
+<script>
+    // 匿名函数自调用  立即执行
+    function fun1(){
+        (function () {
+            var ul = document.getElementById('list')
+            var lis = ul.children
+            console.log(lis) // HTMLCollection(5) [li, li, li, li, li]
+        })()
+    }
+
+    //JS 下动态展示与设置内容
+    function fun2(){
+        var btn1 = document.getElementById('btn1')
+        var btn2 = document.getElementById('btn2')
+        var divs = document.getElementsByTagName('div')
+
+        btn1.onclick = function () {
+            for (var i = 0; i < divs.length; i++) {
+                divs[i].style.display = 'block'
+            }
+        }
+        btn2.onclick = function () {
+            for (var i = 0; i < divs.length; i++) {
+                 divs[i].innerHTML = 'add呢1111';
+            }
+        }
+
+    }
+
+    // jQuery 下设置显示内容
+    /*
+    - 注册时间 去掉on 时一个方法
+    - 隐式迭代 会自动遍历 set所有的赋同样的值  get取值取第一个
+    - 入口函数 ready() 比 window.onload 迅速 
+        - js 会等页面加载完成之后，并且图片加载完成之后才执行 
+        - ready() 是加载文档架构之后，不会等图片加载完成之后就执行
+    - 
+    */
+        // 入口函数格式1
+        $(document).ready(function(){
+            console.log("这是jQuery入口函数的第一种写法");
+        })
+        // 入口函数格式2
+        $(function(){
+            console.log("这是jQuery入口函数的第二种写法");
+        })
+    function fun3() {
+        $('#btn1').click(function(){
+            $('div').show(300)
+        });
+        $("#btn2").click(function(){
+            $('div').text('addq23232')
+        })        
+    }
+    
+    // jQuery 对象 和JS 对象
+    function fun4(){
+        /*
+         DOM--> jQuery  | $()
+         jQuery --> DOM  | $li[0]  / $li.get(0)
+
+         - js对象 DOM对象 使用JS方法获取的对象
+         - jq对象 使用jQuery 方法获取的元素
+         - jq对象 是DOM 对象 很多组成的伪数组
+         - js对象转换为jq 对象 使用 ‘$()’
+         - jq对象 转化为js对象 取出来 使用下标'$li[0]' 或者‘get(0)’
+
+        */
+        var lis = document.getElementById('list')
+        // $(lis).text('heheheheh')   // js对象转换为jq
+ 
+        var $li = $('li') // 所有li 的伪数组
+        $li[1].style.background = 'red'  // jq对象 转化为js对象
+        $li.get(2).style.color = 'red'
+
+    }
+    // 隔行变色  方法1 for 循环 下标
+    function fun5() {
+        var lis = $('li')
+        for (let i = 0; i < lis.length; i++) {
+            const element = lis[i];
+            if(i % 2 == 0){
+                element.style.backgroundColor = 'pink'
+            }else{
+                element.style.backgroundColor = 'hotpink'
+            }
+        }
+    }
+    /*
+    $的实质 
+    - 就是一个函数
+    - 参数不同 有不同的功能
+    */
+    function fun6(){
+        // $() 1参数 时函数 ，入口函数
+        // $() 2参数 时dom对象  转化为jquery对象
+        // $() 3参数 参数时一个字符串  用来找JQ对象
+        
+        $(function(){
+
+        })
+
+        $(document).ready(function(){
+
+        })
+
+        $('div') 
+        $('div li')
+        $('.current')
+    }
+    // JQ 基本选择器
+    function fun7(){
+        // 选择器 和CSS 一样
+        // jquery 设置css样式 .css(name,value)
+
+        // ID选择器 #name
+        $('#list')//.css('backgroundColor','red')
+        
+        // 类选择器 .name
+        $('.section1')//.css('border','1px solid red')
+        
+        // 标签选择器 tagname
+        $('div')//.css('display','block')
+       
+        // 并集选择器 name1,name2
+        $('.section1,#btn1')//.css('color','red')
+       
+        // 交集选择器 name1name2
+        $('.green.yellow')//.css('backgroundColor','pink')
+        
+        // 子类选择器 后代选择器 
+        $('s1 s2') // 后代
+        $('s1>s2') // 子代
+        $('s1,s2') // 并集 或
+        $('s1s2')  // 交集 且
+
+        // 过滤选择器 隔行变色 $('s1:odd') $('s1:even') $('s1:lt(1)')
+
+        $('li:even').css('backgroundColor','red') // 偶 0/2/4/6
+        $('li:odd').css('backgroundColor','cyan') // 奇数
+        $('li:lt(1)').css('fontSize','32px')   // 第一个
+        
+        
+        
+    }
+    // 筛选选择器 下拉菜单案例
+    function fun8(){
+        // mouseover out 鼠标经过 离开事件 穿过就会调用，多次
+        // mouseenter mouseleave 鼠标进入离开事件 比较精确
+        
+        var firsts =  $('.section3>ul>li')
+        firsts.mouseenter(function(){
+            $(this).children('ul').show()
+        })
+        firsts.mouseleave(function(){
+            $(this).children('ul').hide()
+        })
+    }
+    // 突出显示图片hover
+    function fun9(){
+        $('.section4>ul>li').mouseenter(function(){
+            $(this).css('opacity','1').siblings().css('opacity','0.4')
+        })
+        $('.section4').mouseleave(function(){
+            $(this).find('li').css('opacity','1')
+        })
+    }
+    // 手风琴案例 折叠展开
+    /*
+    - 1给所有的span注册点击事件，让当前span的兄弟div显示出来
+    - 2下一个兄弟：nextElementSibling
+    */
+    function fun10(){
+        $('.section5 .groupTitle').click(function(){
+            $(this).next().slideToggle(200).parent().siblings().children('div').slideUp(200)
+        })
+    }
+
+    // 淘宝精品案例 根据左右侧的下表控制中间的图片显示隐藏
+    /*
+    - eq 指定下标
+    - $(li:eq())  
+    - $(li).eq()
+    - index() 获取当前元素所在兄弟中的索引
+    */
+    function fun11(){
+        $('.section6 #left>li').mouseenter(function(){
+            var index = $(this).index()
+            $('.section6 #center>li:eq(' + index + ')').show().siblings().hide()
+        })
+        $('.section6 #right>li').mouseenter(function(){
+            var index = $(this).index() + 9
+            $('.section6 #center>li').eq(index).show().siblings().hide()
+        })
+    }
+
+    // 京东呼吸灯动画 轮播图 
+    function fun12(){
+        // 初始值0  点击 右侧+ 1，大于count index 为0 设置下标index的li显示，其他隐藏
+        //  点击左侧 - 1，<0 的时候 index 为count -1 设置下标index的li显示，其他隐藏
+        
+       var lis =  $('.section7 .slider li')
+       var index = 0
+       $('.section7 .arrow-right').click(function(){
+            index ++;
+            if (index == lis.length - 1){
+                index = 0
+            }
+            lis.eq(index).fadeIn(600).siblings().fadeOut(600)
+
+       })
+       $('.section7 .arrow-left').click(function(){
+            index ++;
+            if (index == - 1){
+                index = lis.length - 1
+            }
+            lis.eq(index).fadeIn(600).siblings().fadeOut(600)
+       })
+
+    }
+    fun12()
+
+
+</script>
+<style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    /* section{
+        padding: 10px
+    } */
+    
+    .section2 div{
+        height: 100px;
+        margin-bottom: 10px;
+        background-color: #a43035;
+        display: none;   
+    }
+    ul {
+      list-style: none;
+    }
+    /* section3 */
+    .section3 {
+        width: 330px;
+        height: 30px;
+        /* margin: 100px auto 0; */
+        padding-left: 10px;
+        background-image: url(imgs/bg.jpg);
+    }
+    .section3 li{
+        background-image: url(imgs/libg.jpg);
+    }
+    /* 一级 */
+    .section3 >ul >li{
+        float: left;
+        margin-right: 10px;
+        position: relative;
+    }
+    .section3 a{
+        display: block;
+        height: 30px;
+        width: 100px;
+        text-decoration: none;
+        color: #000;
+        line-height: 30px;
+        text-align: center;
+    }
+    .section3 li ul {
+        position: absolute;
+        top: 30px;
+        display: none;
+    }
+    /* section4 */
+    .section4 {
+        background: #000;  
+    }
+    .section4 ul{
+        margin: 20px auto 0;
+        width: 630px;
+        height: 394px;
+        padding: 10px 0 0 10px;
+        background: #000;
+        overflow: hidden;
+        border: 1px solid #fff;
+    }
+    .section4 li{
+        float: left;
+        margin: 0 10px 10px 0;
+    }
+    .section4 img{
+        display: block;
+        border: 0;
+    }
+    /* section5 */
+    .parentWrap {
+      width: 200px;
+      text-align:center;
+      
+    }
+    
+    .menuGroup {
+      border:1px solid #999;
+      background-color:#e0ecff;
+    }
+    
+    .groupTitle {
+      display:block;
+      height:20px;
+      line-height:20px;
+      font-size: 16px;
+      border-bottom:1px solid #ccc;
+      cursor:pointer;
+    }
+    
+    .menuGroup > div {
+      height: 200px;
+      background-color:#fff;
+      display:none;
+    }
+    /* section6 */
+    .section6 .wrapper {
+      width: 298px;
+      height: 248px;
+      margin: 20px auto 0;
+      border: 1px solid pink;
+      overflow: hidden;
+    }
+    
+    #left, #center, #right {
+      float: left;
+    }
+    
+    #left li, #right li {
+      background: url(images/lili.jpg) repeat-x;
+    }
+
+    #left li a, #right li a {
+      display: block;
+      width: 48px;
+      height: 27px;
+      border-bottom: 1px solid pink;
+      line-height: 27px;
+      text-align: center;
+      color: black;
+    }
+    
+    #left li a:hover, #right li a:hover {
+      background-image: url(images/abg.gif);
+    }
+    #center {
+      border-left: 1px solid pink;
+      border-right: 1px solid pink;
+    }
+    /* section7 */
+    .slider {
+      height: 340px;
+      width: 790px;
+      margin: 40px auto;
+      position: relative;
+    }
+    
+    .slider li {
+      position: absolute;
+      display: none;
+    }
+    
+    .slider li:first-child {
+      display: block;
+    }
+    
+    .arrow {
+      display: none;
+    }
+    
+    .slider:hover .arrow {
+      display: block;
+    }
+    
+    .arrow-left,
+    .arrow-right {
+      font-family: "SimSun", "宋体";
+      width: 30px;
+      height: 60px;
+      background-color: rgba(0, 0, 0, 0.1);
+      position: absolute;
+      top: 50%;
+      margin-top: -30px;
+      cursor: pointer;
+      text-align: center;
+      line-height: 60px;
+      color: #fff;
+      font-weight: 700;
+      font-size: 30px;
+    }
+    .arrow-left {
+      left: 0;
+    }
+    .arrow-right {
+      right: 0;
+    }
+    .arrow-left:hover,
+    .arrow-right:hover {
+      background-color: rgba(0, 0, 0, .5);
+    }
+    
+    
+
+</style>
+
+</html>

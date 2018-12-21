@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>two</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <script src="./jquery-1.12.4.min.js"></script>
+</head>
+<body>
+    <!-- CSS操作 -->
+    <section class="section1">
+        <ul>
+            <li>section1-1</li>
+            <li>section1-2</li>
+            <li>section1-3</li>
+            <li>section1-4</li>
+        </ul>
+    </section>
+    <hr>
+    
+    <!-- class操作 -->
+    <section class="section2">
+        <input type="button" value="添加basic类" >
+        <input type="button" value="添加bigger类">
+        <input type="button" value="移除bigger类">
+        <input type="button" value="判断bigger类">
+        <input type="button" value="切换类">
+        
+        <ul>
+            <li class="aa bb cc dd">1</li>
+            <li class="aa bb cc dd">2</li>
+            <li class="aa bb cc dd">3</li>
+            <li class="aa bb cc dd">4</li>
+        </ul>
+    </section>
+    <hr>
+    
+    <!-- tab栏切换 增加移除class 改变样式 -->
+    <section class="section3">
+        <div class="wrapper">
+            <ul class="tab">
+                <li class="tab-item active">国际大牌<span>◆</span></li>
+                <li class="tab-item">国妆名牌<span>◆</span></li>
+                <li class="tab-item">清洁用品<span>◆</span></li>
+                <li class="tab-item">男士精品</li>
+            </ul>
+            <div class="products">
+                <div class="main selected">
+                    <a href="###"><img src="imgs/guojidapai.jpg" alt=""/></a>
+                </div>
+                <div class="main">
+                    <a href="###"><img src="imgs/guozhuangmingpin.jpg" alt=""/></a>
+                </div>
+                <div class="main">
+                    <a href="###"><img src="imgs/qingjieyongpin.jpg" alt=""/></a>
+                </div>
+                <div class="main">
+                    <a href="###"><img src="imgs/nanshijingpin.jpg" alt=""/></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+
+    <!-- 属性操作 -->
+    <section class="section4">
+        <img src="imgs/04.gif" alt="突破了" title="对对对">
+    </section>
+    <hr>
+    
+    <!-- 美女相册 -->
+    <section class="section5">
+        <h2> 美女画廊</h2>
+        
+        <!-- 缩略图列表 -->
+        <ul id="imagegallery">
+            <li>
+                <a href="images/1.jpg" title="美女A">
+                    <img src="images/1-small.jpg" width="100" alt="美女1"/>
+                </a>
+            </li>
+            <li><a href="images/2.jpg" title="美女B">
+                    <img src="images/2-small.jpg" width="100" alt="美女2"/>
+                </a>
+            </li>
+            <li><a href="images/3.jpg" title="美女C">
+                    <img src="images/3-small.jpg" width="100" alt="美女3"/>
+                </a>
+            </li>
+            <li><a href="images/4.jpg" title="美女D">
+                    <img src="images/4-small.jpg" width="100" alt="美女4"/>
+                </a>
+            </li>
+        </ul>
+        <!-- 下面提示文字 -->
+        <div style="clear:both"></div>
+        <img id="image" src="images/placeholder.png" alt="" width="450px"/>
+        <p id="des">选择一个图片</p>
+        
+    </section>
+    <hr>
+    
+    <!-- prop 方法 bool值 -->
+    <section class="section6">
+        <input type="button" value="选中">
+        <input type="button" value="不选中">
+        <input type="checkbox" id="ck">
+    </section>
+    <hr>
+
+    <!-- 表格全选案例 -->
+    <section class="section7">
+        <div class="wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            <input type="checkbox" id="j_cbAll"/>
+                        </th>
+                        <th>菜名</th>
+                        <th>饭店</th>
+                    </tr>
+                </thead>
+                <tbody id="j_tb">
+                    <tr>
+                        <td>
+                            <input type="checkbox"/>
+                        </td>
+                        <td>红烧肉</td>
+                        <td>田老师</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox"/>
+                        </td>
+                        <td>西红柿鸡蛋</td>
+                        <td>田老师</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox"/>
+                        </td>
+                        <td>红烧狮子头</td>
+                        <td>田老师</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox"/>
+                        </td>
+                        <td>日式肥牛</td>
+                        <td>田老师</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <hr>
+
+    <!-- 三组基本动画 -->
+    <section class="section8">
+            <input type="button" value="显示">
+            <input type="button" value="隐藏">
+            <input type="button" value="切换">
+            <div></div>
+    </section>
+    <hr>
+
+    <!--  自定义动画 -->
+    <section class="section9">
+        <input type="button" value="开始">
+        <input type="button" value="结束">
+        <div id="box1"></div>
+        <div id="box2"></div>
+        <div id="box3"></div>
+    </section>
+    <section class="section10"></section>
+    <section class="section11"></section>
+    <section class="section12"></section>
+    <section class="section13"></section>
+
+
+</body>
+
+<!-- JS -->
+<script>
+
+    // CSS 操作
+    function fun1(){
+         /*
+        - 修改单个样式css(name,value)
+        - 修改多个样式 
+          - css(k1,v1).css(k2,v2).css(k3,v3)
+          - css({key1:value1,key2:value2})
+        - 获取css 样式 `css(name)`
+          - 隐式迭代 全部设置，取出时按第一个
+         - 设置操作的时候：会给jq内部的所有对象都设置上相同的值。
+         - 获取的时候：只会返回第一个元素对应的值。
+        */
+        // $('.section1 li').css('fontSize','20')
+        $("li").css("backgroundColor", "pink")
+                .css("color", "red")
+                .css("fontSize", "32px");
+
+        $("li").css({
+            backgroundColor:"pink",
+            color: "red",
+            fontSize:"32px",
+            border: "1px solid black"
+        });
+        $('.section1 li').eq(0).css('fontSize','20px')
+        $('.section1 li').eq(1).css('fontSize','21px')
+        $('.section1 li').eq(2).css('fontSize','22px')
+        
+        console.log($('.section1 li').css('fontSize')) // -> 20px
+    }
+    
+    // Class 操作 增删改查判断
+    function fun2() {
+        // 增1
+        $('.section2 input').eq(0).click(function(){
+            $('li').addClass('basic')
+        })
+        // 增2
+        $('.section2 input').eq(1).click(function(){
+            $('li').addClass('bigger')
+        })
+        // 删除1
+        $('.section2 input').eq(2).click(function(){
+            $('li').removeClass('bigger')
+        })
+        // 判断
+        $('.section2 input').eq(3).click(function(){
+            console.log($('li').hasClass('bigger'))
+        })
+        // 切换 有删除 没有添加 toggle
+        $('.section2 input').eq(4).click(function(){
+            $('li').toggleClass('basic')
+        })
+    }
+   
+    // tab栏切换
+    function fun3(){
+        // tab 选中的添加active 其他的移除 active
+        // main 选中添加selected 其他的移除 selected
+
+        $('.tab .tab-item').mouseenter(function(){
+            $(this).addClass('active').siblings().removeClass('active')
+            var index = $(this).index()
+            $('.products .main').eq(index).addClass('selected').siblings().removeClass('selected')
+        })
+    }
+   
+    // 属性操作 标签的属性 img 的src / alt / title 等属性
+    function fun4(){
+         /*
+         - 样式：在style里面写的，用css来操作
+         - 属性：在里面里面写的，用attr方法操作。
+         - 用法和css一样  单个/多个/获取  
+         - 单个attr(k1,v1)
+         - 多个attr(k1,v1).attr(k2,v2)
+         - attr({k1:v1,k2:v2,k3:v3})
+         - attr(name) 获取name 的属性值
+
+         */ 
+
+        $('.section4 img').attr('alt','XXXXX')
+        console.log($('.section4 img').attr('alt'))
+    }
+    
+    // 美女相册点击小图，显示大图并更换提示文字
+    function fun5(){
+        // 把点击的a标签的文字，传入下面ID为image 的src中  a标签title 替换P标签的内容 
+        $('.section5 #imagegallery a').click(function(){
+            
+           var asrc =  $(this).attr('href')
+           var astr =  $(this).attr('title')
+
+            $('#image').attr('src',asrc)
+            $('#des').text(astr)
+            return false  // 组织默认操作
+        })
+    }
+    
+    // prop 方法 只设置bool 类型 使用方法和attr 一样
+    function fun6(){    
+        $('.section6 input').eq(0).click(function(){
+            $('#ck').prop('checked',true)            
+        })
+        $('.section6 input').eq(1).click(function(){
+            $('#ck').prop('checked',false)            
+        })
+    }
+
+    // 表格全选案例
+    function fun7(){
+        // 1.thead input -> tbody input
+        // 2.tbody input 选择的个数 0 false， 4 true -> thead input 
+
+        $('#j_cbAll').click(function(){
+            var che = $(this).prop('checked')
+            $('#j_tb input').prop('checked',che)
+        })
+        $('#j_tb input').click(function(){
+            var chedinput = $('#j_tb input:checked')
+            var all = $('#j_tb input')
+            if(chedinput.length == all.length){
+                $('#j_cbAll').prop('checked',true)
+            }else{
+                $('#j_cbAll').prop('checked',false)
+            }
+        })
+        
+    } 
+
+    // 三组基本动画
+    function fun8(){
+        /*
+        - show()
+            - show()动画 不传参数没有动画效果
+            - show(speed) speed:100/fast:200ms/normal:400ms/slow:600
+            - show(speed,callback)
+        - slideDowm() slideUp() 滑入滑出
+            - 如果不传参数，默认nomarl 400ms
+            - slideToggle 如果时滑入 就执行滑出动画，切换动画
+        - fadeIn() fadeOut() fadeToggle() 淡入/淡出/切换淡入淡出
+        */
+
+       //show()
+       $(".section8 input").eq(0).click(function(){
+           
+          // show1.无参数直接显示
+           //$('.section8 div').show()
+
+           // show2设置速度
+          // $('.section8 div').show('slow')
+
+           // show3 设置回调
+        //    $('.section8 div').show(300,function(){
+        //        console.log('anomation done')
+        //    })
+
+       })
+       $(".section8 input").eq(1).click(function () {
+            // $("div").hide();
+       })
+
+       //slideDowm() 
+        $(".section8 input").eq(0).click(function(){
+            // $('.section8 div').slideDown(1000)
+
+        })
+        $(".section8 input").eq(1).click(function () {
+            // $("div").slideUp()
+        })
+
+        $(".section8 input").eq(2).click(function () {
+            // $("div").slideToggle()
+        })
+
+        // fadeIn() / fadeOut() fadeToggle()
+        $(".section8 input").eq(0).click(function(){
+            $('.section8 div').fadeIn(1000)
+
+        })
+        $(".section8 input").eq(1).click(function () {
+            $("div").fadeOut()
+        })
+
+        $(".section8 input").eq(2).click(function () {
+            $("div").fadeToggle()
+        })
+        
+
+    }
+
+    // 下拉菜单案例
+    function fun9(){
+        //mouseover：鼠标经过事件
+        //mouseout:鼠标离开事件
+        
+        //mouseenter:鼠标进入事件
+        //mouseleave：鼠标离开事件
+        
+        var $li = $(".wrap>ul>li");
+        //给li注册鼠标经过事件，让自己的ul显示出来
+        $li.mouseenter(function () {
+            //找到所有的儿子，并且还得是ul
+            
+            //stop：停止当前正在执行的动画
+            $(this).children("ul").stop().slideDown();
+        });
+    
+        $li.mouseleave(function () {
+            $(this).children("ul").stop().slideUp();
+        });
+    }
+
+    // 京东轮播图
+    function fun10(){
+        var count = 0;
+        $(".arrow-right").click(function () {
+            count++;
+            if(count == $(".slider li").length){
+                count = 0;
+            }
+            console.log(count);
+            //让count渐渐的显示，其他兄弟渐渐的隐藏
+            $(".slider li").eq(count).fadeIn().siblings("li").fadeOut();
+        });
+        
+        $(".arrow-left").click(function () {
+            count--;
+            if(count == -1){
+                count = $(".slider li").length - 1;
+            }
+            console.log(count);
+            //让count渐渐的显示，其他兄弟渐渐的隐藏
+            $(".slider li").eq(count).fadeIn().siblings("li").fadeOut();
+        })
+    }
+
+    // 自定义动画
+    function fun11(){
+        /*
+        - 自定义动画 animate(obj,speed,style,callback)
+          - 第一个参数时动画的样式对象
+          - 第二个参数 speed 动画的执行时间
+          - 第三个参数 动画的执行效果
+          - 第四个参数 回调函数
+        - 停止动画 stop(clearQueue,jumpToEnd) 
+          - clearQueue 是否清除动画队列
+          - jumpToEnd 是否跳转到当前动画的最终结果 
+        */ 
+
+        $('.section9 input').eq(0).click(function(){
+            
+            // $('.section9 #box1').animate({left:800},10000)
+            $('.section9 #box1').animate({left:800},5000,'swing')  // swing 秋千 摇摆
+            $('.section9 #box2').animate({left:800},5000,'linear')  // linear 匀速
+            $('.section9 #box3').animate({left:800},5000,'linear',function(){
+                console.log('animate done liner 5s')
+            })   
+        })
+        $('.section9 input').eq(1).click(function(){
+            //stop:停止当前正在执行的动画
+            //clearQueue:是否清除动画队列 true  false
+            //jumpToEnd:是否跳转到当前动画的最终效果 true false
+            //.stop().animate();
+            $(".section9 #box1").stop(true, true);
+        })
+
+    }
+    fun11()
+</script>
+
+<!-- CSS -->
+<style>
+* {
+    margin: 0;
+    padding: 0;
+}
+section{
+    padding: 20px 40px;
+}
+
+ul {
+    list-style: none;
+}
+.section2 li.basic {
+    background-color: pink;
+    font-size: 12px;
+    color: red;
+}
+
+.section2 .bigger {
+    font-size: 40px;
+}
+.section3 .wrapper {
+    width: 1000px;
+    height: 575px;
+    margin: 0 auto;
+}
+.tab {
+    border: 1px solid #ddd;
+    border-bottom: 0;
+    height: 36px;
+    width: 320px;
+}
+
+.tab li {
+    position: relative;
+    float: left;
+    width: 80px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    cursor: pointer;
+    border-top: 4px solid #fff;
+}
+
+.tab span {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    background: #ddd;
+    width: 1px;
+    height: 14px;
+    overflow: hidden;
+}
+.tab li.active {
+    border-color: red;
+    border-bottom: 0;
+}
+.products {
+    width: 1002px;
+    border: 1px solid #ddd;
+    height: 90%;
+}
+
+.products .main {
+    float: left;
+    display: none;
+}
+
+.products .main.selected {
+    display: block;
+}
+ /* section5 */
+
+ .section5 {
+    font-family: "Helvetica", "Arial", serif;
+    color: #333;
+    background-color: #ccc;
+    margin: 1em 10%;
+} 
+h1 {
+    color: #333;
+    background-color: transparent;
+}
+    
+.section5 a {
+    color: #c60;
+    background-color: transparent;
+    font-weight: bold;
+    text-decoration: none;
+}
+.section5 li {
+    float: left;
+    padding: 1em;
+    list-style: none;
+}
+
+#imagegallery {
+    list-style: none;
+}
+#imagegallery li {
+    margin: 0px 20px 20px 0px;
+    padding: 0px;
+    display: inline;
+}
+#imagegallery li a img {
+    border: 0;
+}
+ 
+ /* section7 */
+ .section7 .wrap {
+    width: 300px;
+    margin: 20px auto 0;
+}
+.section7 table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #c0c0c0;
+    width: 300px;
+}
+.section7 th,.section7 td {
+    border: 1px solid #d0d0d0;
+    color: #404060;
+    padding: 10px;
+}
+.section7 th {
+    background-color: #09c;
+    font: bold 16px "微软雅黑";
+    color: #fff;
+}
+.section7 td {
+    font: 14px "微软雅黑";
+}
+.section7 tbody tr {
+    background-color: #f0f0f0;
+    text-align: center;
+}
+.section7 tbody tr:hover {
+    cursor: pointer;
+    background-color: #fafafa;
+}
+.section8 div {
+    width: 400px;
+    height: 400px;
+    background-color: pink;
+    display: none;
+}       
+.section9 div {
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+    position: absolute;
+}
+.section9 #box2 {
+    background-color: blue;
+    margin-top: 100px;
+}
+
+.section9 #box3 {
+    background-color: yellowgreen;
+    margin-top: 200px;
+}
+</style>
+</html>
