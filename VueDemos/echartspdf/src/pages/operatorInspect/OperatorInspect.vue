@@ -134,7 +134,7 @@ export default {
             var opts = {
                 allowTaint:true,//允许加载跨域的图片
                 tainttest:true, //检测每张图片都已经加载完成
-                // logging: true, //日志开关，发布的时候记得改成false
+                logging: false, //日志开关，发布的时候记得改成false
                 width:width, //dom 原始宽度
                 height:height //dom 原始高度
             };
