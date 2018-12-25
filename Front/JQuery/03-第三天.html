@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>three</title>
+    <script src="./jquery-1.12.4.min.js"></script>
+</head>
+<body>
+    <!-- val方法 -->
+    <section class="section1">
+        <input type="button" value="呵呵" id="btn">
+        <input type="text" value="洋酒" id="txt">
+    </section>
+    <hr>
+
+    <!-- html() 和 text() -->
+    <section class="section2">
+            <div>
+                <h3>我是标题</h3>
+            </div>
+    </section>
+    <hr>
+    
+    <!-- width() / height() 方法 -->
+    <section class="section3">
+            <div></div>
+    </section>
+    <hr>
+    
+    <!-- scrollTop与scrollLeft -->
+    <section class="section4"></section>
+    <hr>
+    
+    <!-- 固定导航案例 -->
+    <section class="section5">
+            <div class="top" id="topPart">
+                <img src="images/top.png" alt=""/>
+            </div>
+            <div class="nav" id="navBar">
+                <img src="images/nav.png" alt=""/>
+            </div>
+            <div class="main" id="mainPart">
+                <img src="images/main.png" alt=""/>
+            </div>
+    </section>
+    <hr>
+    
+    <section class="section6"></section>
+    <hr>
+    
+    <section class="section7"></section>
+    <hr>
+    
+    <section class="section8"></section>
+    <hr>
+    
+    <section class="section9"></section>
+    <hr>
+    
+    <section class="section10"></section>
+    <hr>
+    
+    <section class="section11"></section>
+    <hr>
+    
+    <section class="section12"></section>
+    <hr>
+    
+    <section class="section13"></section>
+    <hr>
+    
+    <section class="section14"></section>
+    <hr>
+    
+    <section class="section15"></section>
+    <hr>
+    
+    <section class="section16"></section>
+    <hr>
+    
+</body>
+<script>
+    $('.section5').hide()
+     // val()方法
+    function funn1(){
+        /*
+         - val() 获取input 的value
+         - val('111') 给input赋值 value
+        */
+        // $('.section1 #txt')
+
+        console.log($('.section1 #btn').val())  // hehe
+        $('.section1 #btn').val('add')       // add
+
+        console.log($('.section1 #btn').attr('value'))
+
+        // 如果是默认值 清空内容
+        $('.section1 #txt').focus(function(){
+            
+            if($('.section1 #txt').val() === '洋酒'){
+                $('.section1 #txt').val('')  
+            }
+        })
+        
+        // 失去焦点的时候 如果为空 给个默认值
+        $('.section1 #txt').blur(function(){
+            if($('.section1 #txt').val() === ''){
+                $('.section1 #txt').val('洋酒')  
+            }
+        })
+
+    }
+
+    // html() 方法 和text() 方法
+    function funn2(){
+        /*
+        html innerHTML text:innerText
+        */ 
+
+        console.log($('.section2 div').html())   //  <h3>我是标题</h3>
+        console.log($('.section2 div').text())  // 我是标题
+        $('.section2 div').text('<p>我是文本</p>')  
+        console.log($('.section2 div').html())   // &lt;p&gt;我是文本&lt;p&gt;  字符串
+
+        $('.section2 div').html('<p>我是文本</p>')  
+        console.log($('.section2 div').html())   // <p>我是文本</p>
+
+    }
+
+    // width() / height() 方法
+    function funn3(){
+        // .section3
+        /*
+         - 获取div宽度
+        */
+        
+        // console.log($('.section3 div').css('width')) //  1150px 没有设置 默认负组件的宽度 组内样式
+        // $('.section3 div').css('width','400px')
+        // console.log($('.section3 div').css('width')) // 400px
+        
+
+        // 直接获取的是数字
+        // console.log($('.section3 div').width()) // 400
+        console.log($('.section3 div').innerWidth()) // padding+width
+        console.log($('.section3 div').outerWidth()) // padding+width+border
+        console.log($('.section3 div').outerWidth(true)) // padding+width+border+margin
+        $(".section3 div").width(400);
+        
+
+        $(window).resize(function(){
+            console.log($(window).width()) 
+            console.log($(window).height()) 
+        })
+    }
+
+    // scrollTop与scrollLeft  距窗口的左侧的偏移量 距离顶部的偏移量
+    function funn4(){
+        $('body').css('width','4000px')
+        $('body').css('height','4000px')
+        $(window).scroll(function(){
+            console.log($(window).scrollTop())
+            console.log($(window).scrollLeft())
+        })
+    }
+
+    // 固定导航案例
+    function funn5(){
+        $('.section5').show()
+
+        /*
+        - 判断卷的高度 与 topPart的高度
+        - 大于 的话navbar 固定定位
+        - 设置main 有marginTop
+        */ 
+
+        if($(window).scrollTop() >= $('.top').height()){
+            $('.nav').addClass('fixed')
+            $('.main').css('marginTop',$('.nav').height() + 10)
+        }else{
+            $('.nav').removeClass('fixed')
+            $('.main').css('marginTop',10)
+        }
+
+    }
+
+    // 小火箭返回顶部案例
+    function funn6(){
+        /*
+         当页面超出去1000px的时候，让小火箭显示出来,如果小于1000，就让小火箭隐藏
+
+        */
+
+        $(window).scroll(function(){
+            if($(window).scrollTop() >= 1000){
+                $('.actGop').stop().fadeIn(1000)
+            }else{
+                $('.actTop').stop().fadeOut(1000)
+            }
+        })
+        function getScroll(){
+            return {
+                left:window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
+                top:window.pageXOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+            }
+        }
+        $('.actGotop').click(function(){
+            $('html,body').stop().animate({scrollTop:0},3000)
+            // screenTop 为0 
+            $(window).scrollTop(0)
+        })
+    }
+
+    // offset方法与position
+    function funn7(){
+        /*
+        offset() 获取元素的相对于 document()的位置
+        position()  获取元素相对于有定位的元素的位置
+        */ 
+        console.log($('.son').offset())
+        console.log($('.son').position())
+    }
+
+    // jquery事件机制的发展历程
+    function funn8(){
+
+    }
+    function funn9(){
+
+    }
+    function funn10(){
+
+    }
+    function funn11(){
+
+    }
+    function funn12(){
+
+    }
+    function funn13(){
+
+    }
+    function funn14(){
+
+    }
+    function funn15(){
+
+    }
+    function funn16(){
+
+    }
+
+    funn5()
+</script>
+<style>
+
+* {
+    margin: 0;
+    padding: 0
+}
+section {
+    padding: 10px 30px;
+}
+
+.section3 div {
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    padding: 10px;
+    border: 10px solid #000;
+    margin: 10px;
+}
+ /* section5 */
+.section5 img {
+    vertical-align: top;
+}
+
+.section5 .main {
+    margin: 10px auto 0;
+    width: 1000px;
+}
+
+.section5 .fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+</style>
+</html>

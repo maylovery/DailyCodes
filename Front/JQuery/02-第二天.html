@@ -175,32 +175,83 @@
         <div id="box3"></div>
     </section>
     <hr>
-
-    <!-- 手风琴案例 -->
-    <section class="section10">
-        <div id="box">
-            <ul>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-            </ul>
-        </div>
-    </section>
-    <hr>
-    
+   
+    <section class="section10"></section>
+        
     <!-- 动画队列 -->
     <section class="section11">
         <input type="button" value="按钮" id="btn">
         <div></div>
+
+    </section>
+    
+    <!-- 创建添加节点 -->
+    <section class="section12">
+        <div id="box">
+            我是内容
+        </div>
+        <p>我是外面的p元素</p>
     </section>
     <hr>
-    
-    <section class="section12"></section>
-    
-    <section class="section13"></section>
 
+    <!-- 城市选择 -->
+    <section class="section13">
+        <h1>城市选择：</h1>
+        <select id="src-city" name="src-city" multiple>
+            <option value="1">北京</option>
+            <option value="2">上海</option>
+            <option value="3">深圳</option>
+            <option value="4">广州</option>
+            <option value="5">西红柿</option>
+        </select>
+        <div class="btn-box">
+            <!--实体字符-->
+            <button id="btn1"> &gt;&gt; </button>
+            <button id="btn2"> &lt;&lt; </button>
+            <button id="btn3"> &gt;  </button>
+            <button id="btn4"> &lt; </button>
+        </div>
+        <select id="tar-city" name="tar-city" multiple>
+        </select>
+    </section>
+    <hr>
+
+    <!-- 微博发布案例 -->
+    <section class="section14">
+        <div class="box" id="weibo">
+            <span>微博发布</span>
+            <textarea name="" id="txt" cols="30" rows="10"></textarea>
+            <button id="btn">发布</button>
+            <ul id="ul">
+            
+            </ul>
+        </div>
+    </section>
+    <hr>
+
+    <!-- 清空节点与删除节点 -->
+    <section class="section15">
+        <div>
+            <p>1111</p>
+            <p>2222</p>
+        </div>
+        <p class='des'>我是外面的p元素</p>
+    </section>
+    <hr>
+
+    <!-- 弹幕效果 -->
+    <section class="section16">
+        <div class="boxDom" id="boxDom">
+            <div class="idDom" id="idDom">
+                <div class="content">
+                <p class="title">吐槽:</p>
+                <input type="text" class="text" id="text"/>
+                <button type="button" class="btn" id="btn">发射</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
 
 </body>
 
@@ -265,6 +316,7 @@
     function fun3(){
         // tab 选中的添加active 其他的移除 active
         // main 选中添加selected 其他的移除 selected
+
         $('.tab .tab-item').mouseenter(function(){
             $(this).addClass('active').siblings().removeClass('active')
             var index = $(this).index()
@@ -351,10 +403,10 @@
        $(".section8 input").eq(0).click(function(){
            
           // show1.无参数直接显示
-        //    $('.section8 div').show()
+           //$('.section8 div').show()
 
            // show2设置速度
-        //   $('.section8 div').show('slow')
+          // $('.section8 div').show('slow')
 
            // show3 设置回调
         //    $('.section8 div').show(300,function(){
@@ -472,9 +524,9 @@
         })
 
     }
-
-    // 手风琴案例
-    function fun12(){
+    //手风琴案例
+    // 设置所有的默认图片 li鼠标进入一个展开其他隐藏 移除鼠标 全部设置默认值
+    function fun121(){
         // ul ->6li li上
         // 设置背景图
         var  lis = $('.section10 #box li')
@@ -488,9 +540,9 @@
             lis.stop().animate({width:240})
         })
     }
-   
-    // 动画队列 把这些动画存储到一个动画队列里面
-    function fun13(){
+
+    // 动画队列
+    function fun122(){
         $('.section11 #btn').click(function(){
             $('.section11 div').animate({left:800}) 
                     .animate({top:400})
@@ -501,11 +553,146 @@
         })
     }
 
-    // 动态创建节点
-    function fun14(){
+    // jQuery 创建添加节点
+    function fun12(){
+            // 创建jq对象
+            var lis = $('<a href="https://www.baidu.com" target="_blank">百度一下你不就知道')
+            console.log(lis)
+
+            $('.section12 div').append('<a href="https://www.baidu.com" target="_blank">百度一下你不就知道')
+        
+            // 添加到子元素的最后面
+            $('.section12 div').append($('p'))
+            $('p').appendTo($('.section12 div'))
+
+            // 添加到元素的前面
+            $('.section12 div').prepend($('p'))
+            $('p').prependTo($('.section12 div'))
+
+
+            // after before 
+            $('.section12 div').after($("p"));
+            $('.section12 div').before($("p"));
 
     }
-    fun13()
+    
+    
+    // 城市选择
+    function fun13(){
+        // .section13
+
+        // >>
+        $('.section13 #btn1').click(function(){
+            // 全部移入右边
+            $('#src-city>option').appendTo($('#tar-city'))
+        })
+
+        // <<
+        $('.section13 #btn2').click(function(){
+            // $('#tar-city>option').appendTo($('#src-city'))
+            $('#src-city').append($('#tar-city>option'))
+        })
+
+        // > 
+        $('.section13 #btn3').click(function(){
+            $('#src-city>option:selected').appendTo($('#tar-city'))
+        })
+
+        // <
+        $('.section13 #btn4').click(function(){
+            $('#src-city').append($('#tar-city>option:selected'))
+        })
+
+    }
+
+    // 微博发布案例 
+    function fun14(){
+        // 将输入框文字  创建一个li 拼接到 ul 中
+        // - 获取input 的内容 $('input').val().trim() 判断长度
+        $('.section14 #btn').click(function(){
+            var atext =  $('.section14 #txt').val()
+            if (atext.trim().length == 0){
+                return
+            }
+            // appendTo  拼入组件 在后面
+            // prependTo 拼入组件 在前面
+            $('<li></li>').text(atext).prependTo('.section14 #ul')
+            
+            // 清空输入框
+            $('.section14 #txt').val("")
+        })
+    }
+
+    // 清空节点 删除节点
+    function fun15(){
+        // section15
+        $('.section15 .des').click(function(){
+            alert('p click')
+        })
+        $('.section15 .des').clone(true).appendTo('.section15 div')
+        /*
+          清空一个元素 html('') 会内存泄漏
+          - 清理门户 empty()
+          - remove()
+
+          复制节点 clone(bool)  参数bool  默认是false
+           - false 的时候深度复制，不会复制事件
+           - true 深复制 会复制事件
+        */
+       // 1
+        $('.section15 div').html('')
+
+        // 2
+        $('.section15 div').empty()
+
+        // 3
+        $('.section15 div').remove()
+
+    }
+
+    // 弹幕效果  随机 XY 从右侧动画进入，出界面 隐藏
+    function fun16(){
+        /*
+        1. 随机色
+        2. 根据input内容 创建span 
+        3 设置css 颜色 初始的left top 值（style中绝对定位） 
+        4.设置动画 animate 5秒之内 left 修改为-1000 ，动画结束 移除span 
+        5.清空输入输入框
+        6.监听键盘 keycode==13 的时候 出发发射按钮
+        */
+        var colors = ["red", "green", "hotpink", "pink", "cyan", "yellowgreen", "purple", "deepskyblue"];
+        
+
+        $('.section16 #btn').click(function(){
+            var randcolor = colors[parseInt(Math.random()*colors.length)]
+            var randy = parseInt(Math.random()*400)
+            var atxe = $('.section16 #text').val()
+            if(atxe.trim().length == 0) {return }
+
+
+            $('<span></span>').text(atxe)
+                .css('color',randcolor)
+                .css('left','1400px')
+                .css('top',randy)
+                .animate({left:'-100px'},8000, 'linear',function(){
+                    $(this).remove()
+                })
+            .appendTo('.section16 #boxDom')
+
+            $('.section16 #text').val('')
+        })
+
+        // 回车触发
+        $('.section16 #text').keyup(function(el){
+            if(el.keyCode == 13){
+                $('.section16 #btn').click()
+            }
+        })
+
+
+    }
+
+    fun16()
 </script>
 
 <!-- CSS -->
@@ -654,7 +841,7 @@ h1 {
     height: 400px;
     background-color: pink;
     display: none;
-}      
+}       
 .section9 div {
     width: 100px;
     height: 100px;
@@ -662,36 +849,136 @@ h1 {
 }
 .section9 #box2 {
     background-color: blue;
+    /* margin-top: 100px; */
 }
 
 .section9 #box3 {
     background-color: yellowgreen;
+    /* margin-top: 200px; */
 }
 
-/* section 10 */
-.section10 ul {
-    list-style: none;
-    width: 1300px;
-}
-.section10 #box {
-    width: 1200px;
+ /* section12 */
+ .section12 div {
+    width: 400px;
     height: 400px;
-    border: 2px solid red;
-    margin: 40px auto;
+    background-color: pink;
 }
 
-.section10 #box li {
-    width: 240px;
-    height: 400px;
-    /*border: 1px solid #000;*/
-    float: left;
+ /* section13 */
+ .section13 select {
+    width: 200px;
+    background-color: teal;
+    height: 200px;
+    font-size: 20px;
 }
 
-.section11 div {
+.section13 .btn-box {
+    width: 30px;
+    display: inline-block;
+    vertical-align: top;
+}
+.section13 .btn-box button{
+    display: block;
+    margin: 10px auto;
+}
+
+ /* section14 */
+ .section14 .box {
+    width: 600px;
+    margin: 100px auto;
+    border: 1px solid #000;
+    padding: 20px;
+}
+.section14 textarea {
+    width: 450px;
+    height: 160px;
+    outline: none;
+    resize: none;
+}
+.section14 ul {
+    width: 450px;
+    padding-left: 80px;
+}
+.section14 ul li {
+    line-height: 25px;
+    border-bottom: 1px dashed #cccccc;
+}
+.section14 input {
+    float: right;
+}
+ /* section15 */
+.section15 div {
     width: 100px;
     height: 100px;
     background-color: pink;
+}
+ /* section16 */
+ .section16 {
+    height: 400px;
     position: relative;
+}
+.section16 .boxDom {
+    width: 100%;
+    height: 100%;
+}
+
+.section16 .idDom {
+    width: 100%;
+    height: 60px;
+    background: #666;
+    position: absolute;
+    bottom: 0px;
+}
+
+.section16 .content {
+    display: inline-block;
+    width: 430px;
+    height: 40px;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    margin: auto;
+}
+
+.section16 .title {
+    display: inline;
+    font-size: 2em;
+    vertical-align: bottom;
+    color: #fff;
+}
+
+.section16 .text {
+    border: none;
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 2.20px;
+}
+
+.section16 .btn {
+    position: absolute;
+    top: 10px;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    background: #f90000;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+}
+
+.section16 span {
+    width: 300px;
+    height: 20px;
+    position: absolute;
+    overflow: hidden;
+    color: #000;
+    font-size: 14px;
+    line-height: 14px;
+    cursor: pointer;
+    white-space: nowrap;
 }
 </style>
 </html>
