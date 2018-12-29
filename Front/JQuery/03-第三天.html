@@ -45,31 +45,81 @@
     </section>
     <hr>
     
-    <section class="section6"></section>
+    <!-- Jquery事件机制 -->
+    <section class="section6">
+        <!--点击按钮，在div里面创建一个新的p元素-->
+        <input type="button" value="按钮" id="btn">
+        <div id="box">
+            <div>
+                <span>呵呵</span>
+                <p>11111</p>
+                <p>22222</p>
+                <p>33333</p>
+                <p>44444</p>
+            </div>
+        </div>
+    </section>
     <hr>
     
-    <section class="section7"></section>
+    <!-- 事件的执行顺序 -->
+    <section class="section7">
+        <input type="button" value="增加" id="btn">
+        <div>
+            <p>111111</p>
+            <p>111111</p>
+            <p>111111</p>
+            <p>111111</p>
+        </div>
+    </section>
     <hr>
     
+    <!-- 删除表格中的一行 或清空 添加 -->
     <section class="section8"></section>
     <hr>
     
-    <section class="section9"></section>
+    <!-- 移除事件 触发事件 -->
+    <section class="section9">
+        <input type="button" value="触发" id="btn">
+        <p>我是一个p元素</p>
+    </section>
     <hr>
     
-    <section class="section10"></section>
+    <!--  事件对象 -->
+    <section class="section10">
+        <div>这是一个div</div>
+        <p>这是一个p元素</p>
+    </section>
     <hr>
     
-    <section class="section11"></section>
+    <!-- 阻止冒泡和阻止浏览器的默认行为 -->
+    <section class="section11">
+        <a href="https://www.baidu.com" id="link">去百度</a>
+    </section>
     <hr>
     
-    <section class="section12"></section>
+    <!-- delay 的用法 -->
+    <section class="section12">
+        <div>这个一个提示消息</div>
+        <div>这个一个提示消息</div>
+    </section>
     <hr>
     
-    <section class="section13"></section>
+    <!-- 链式编程 -->
+    <section class="section13">
+         <div></div>
+    </section>
     <hr>
     
-    <section class="section14"></section>
+    <!-- 五星评分案例 -->
+    <section class="section14">
+        <ul class="comment">
+            <li>☆</li>
+            <li>☆</li>
+            <li>☆</li>
+            <li>☆</li>
+            <li>☆</li>
+        </ul>
+    </section>
     <hr>
     
     <section class="section15"></section>
@@ -222,34 +272,246 @@
 
     // jquery事件机制的发展历程
     function funn8(){
+        // section6
+        /*
+         1.bind() 方式 参数是一个对象，有多个时间的name，func 
+         2.click() 方法 简单事件，给自己注册的事件
+         3.delegate(ele.funname,callback)
+          - 给父元素注册委托事件 最终还有子元素来执行
+          - 第一个参数 
+          - 第二个参数 
+        */
+       
+        $('.section6 p').bind({
+            // click:function(){
+            //     console.log('p bind click')
+            // },
+            mouseenter:function(){
+                console.log('p bind mouseenter')
+            },
+        })
+        $('.section6 div').click(function(){
+            console.log('selft click')
+        })
+
+        // 例子：给div 注册一个委托事件 最终不是由自己执行，而是由P执行
+        $('.section6 #box').delegate('p','click',function(){
+            console.log(this)      // <p>44444</p>
+        }) 
 
     }
+
+    // on注册事件的两种方法
     function funn9(){
+        /*
+         - P自己注册的事件 （简单事件）
+         - P注册让别人触发
+        */
+        
+        // 简单事件 自己注册事件
+        $("#btn").on("click", function () {
+            $("<p>我是新建的p元素</p>").appendTo("div");
+        });
 
+        $('div').on('click','p',function(){
+
+        })
+       
     }
+
+    // 事件的执行顺序
     function funn10(){
+        // section7
+        /*
+        - p自己注册事件  简单事件
+        - 父级div自己执行
+        - 给div 里面的p 执行委托事件
+        - btn 自己注册事件 创建p添加div p无事件注册
+        */
+        $('.section7 p').on('click', function (){
+            console.log('.section7 p -> on')
+        })
+        $('.section7 div').on('click',function(){
+            console.log('.section7 div -> on')
+        })
+        
+        $('.section7 div').on('click','.section7 p',function(){
+            console.log('.section7 div -> (div  .section7 p))')
+        })
+
+        $('.section7 #btn').on('click',function(){
+            $('<p>新创建的P元素</p>').appendTo($('.section7 div'))
+        })
 
     }
+
+    // 表格删除功能
     function funn11(){
+        /*
+         清空所有
+         删除一行 
+         添加 一行       
+        */
+
+        // 清空所有  empty 清空自己内部的所有组件
+        $('.seciton8 clerarbtn').on('click',function(){
+            $('.seciton8 #j_tbody').empty()
+        })
+        
+        // 删除一行  删除按钮 自己删除 / 代理onbody注册 ，让删除button执行
+        // 1. remove 自己从父view 中移除
+        $('.seciton8 .row_dele_btn').on('click',function(){
+            $(this).parent().parent().remove()
+        })
+        
+        // 2
+        $('.seciton8 #j_tbody').on('click','.seciton8 .row_dele_btn',function(){
+            $(this).parent().parent().remove()
+        })
+
+        // 添加一行
+        $('.seciton8 .add_button').on('click',function(){
+            $('<tr> <td>jQuery111</td> <td>adddrow11</td> <td><a href="javascrip:;" class="row_dele_btn">DELETE</a></td> </tr>').appendTo("#j_tbody");
+        })
 
     }
+    
+    // 移除事件绑定
     function funn12(){
+        // section9
+        
+        $('.section9 p').on('click',function(){
+            console.log('.section9 p on click')
+        })
+        // off 移除on的事件
+        // $('.section9 p').off('click')
+
+        // toggle切换 trigger 触发
+        $('.section9 #btn').on('click',function(){
+            
+            // 1 直接调用函数
+            $('.section9 p').click()
+
+            // 2 使用trigger
+            $('.section9 p').trigger('click')
+        })
 
     }
+
+    // 事件对象
     function funn13(){
+        // section10
+          /*
+            on(types, selector, data, callback)
+            data : 传入的参数  
+            e.data 获取传入的参数
+          */
+         //  形参改变 不影响实参的值
+        var money = 100;
+        $('.section10 div').on('click',money,function(e){
+            console.log(e);
+            console.log('number:' + e.data)
+        })
+        money = 0;
+         $('.section10 p').on('click',function(e){
+            console.log("呜呜，我有"+0);
+        })
 
     }
+
+    // 阻止冒泡和阻止浏览器的默认行为
     function funn14(){
+        // section11
+        /*
+        阻止 默认
+        preventDefault() 阻止默认事件
+
+        stopPropagation()   组织冒泡
+        
+        return false 既能阻止事件冒泡 也能阻止浏览器的默认行为
+        console.log(e.cancelBubble)
+        */  
+
+       $('.section11 #link').on('click',function(e){
+        //   e.preventDefault() 
+        //   e.stopPropagation()
+            // alert('11')  // alert之后继续跳转链接
+
+            // return false;
+            // console.log(e.cancelBubble) // undefined
+
+       })
+       $('body').on('click',function(){
+           alert('112')
+       })
 
     }
+    
+    // delay的用法
     function funn15(){
-
+        $('.section12 div').css('display','block').fadeIn(1000).delay(8000).fadeOut(1000)
     }
+
+    // 链式编程
     function funn16(){
-
+        // 链式编程：end()
+        // 设置性操作：可以链式编程
+        // 获取性操作，不能链式，因为获取性操作，数值，字符串，
+        // 返回值是不是一个jq对象。
+        
+        console.log($("div").width(200).height(200).css("backgroundColor", "pink").width());
     }
 
-    funn5()
+    // 五星级评分案例 
+    function funn17(){
+        // section14
+        /*
+        1 给li 注册鼠标经过事件 让自己和前面的兄弟都变实心
+        2. 给ul 注册鼠标离开事件 让所有的li变成空心
+          2-1. 找到current 让current和current前面的变成实心 
+        4.li注册点击事件 点击的加上current class 移除其他兄弟current
+        */
+        var wjx_k = "☆";
+        var wjx_s = "★";
+        
+        //li  mounseenter 之前的都变实心
+        $('.section14 .comment>li').on('mounseenter',function(){
+            $(this).text(wjx_s).prevAll().text(wjx_s)
+            $(this).nextAll().text(wjx_k)
+        })
+        // li click 记录current
+        $('.section14 .comment>li').on('click',function(){
+            $(this).addClass('current').siblings().removeClass('current')
+        })
+
+        // ul 离开事件
+        $('.section14 .comment').on('',function(){
+            // 所有的li 为空心 
+            $(this).children().text(wjx_k)
+            
+            //  Curren之前的类 -> 实心
+            $('.comment>li.current').text(wjx_s).prevAll().text(wjx_s)
+        })
+    }
+
+    //  each方法
+    function funn18(){
+       // 维数组  each (index ,element)
+        $("li").each(function (index, element) {
+            $(element).css("opacity", (index+1)/10);
+        })
+    }
+    // $ 符号 和其他的框架冲突
+    function funn19(){
+        //jQuery释放$的控制权
+        $.noConflict();
+        
+        jQuery(function () {
+        
+        });
+    }
+    // 
+    funn17()
 </script>
 <style>
 
@@ -284,5 +546,38 @@ section {
     top: 0;
     left: 0;
 }
+
+.section6 #box {
+    width: 300px;
+    height: 300px;
+    background-color: pink;
+}
+.section7 div {
+    height: 300px;
+    width: 300px;
+    background-color: pink;
+}
+.section12 div {
+    width: 400px;
+    height: 60px;
+    background-color: pink;
+    text-align: center;
+    line-height: 60px;
+    font-size: 30px;
+    margin: 20px auto;
+    display: none;   
+}
+ /* section14 */
+.section14 .comment {
+    font-size: 40px;
+    color: #ff16cf;
+}
+.section14 .comment li {
+    float: left;
+}
+.section14 ul {
+    list-style: none;
+}
+
 </style>
 </html>

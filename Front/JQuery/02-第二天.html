@@ -177,13 +177,7 @@
     <hr>
    
     <section class="section10"></section>
-        
-    <!-- 动画队列 -->
-    <section class="section11">
-        <input type="button" value="按钮" id="btn">
-        <div></div>
-
-    </section>
+    <section class="section11"></section>
     
     <!-- 创建添加节点 -->
     <section class="section12">
@@ -524,34 +518,6 @@
         })
 
     }
-    //手风琴案例
-    // 设置所有的默认图片 li鼠标进入一个展开其他隐藏 移除鼠标 全部设置默认值
-    function fun121(){
-        // ul ->6li li上
-        // 设置背景图
-        var  lis = $('.section10 #box li')
-        for (let i = 0; i < lis.length; i++) {
-            lis.eq(i).css('backgroundImage','url(images/14-' + (i +1 ) + '.jpg)')
-        }
-        // 所有的li 注册鼠标进入事件
-        lis.mouseenter(function(){
-            $(this).stop().animate({width:800}).siblings().stop().animate({width:100})
-        }).mouseleave(function(){
-            lis.stop().animate({width:240})
-        })
-    }
-
-    // 动画队列
-    function fun122(){
-        $('.section11 #btn').click(function(){
-            $('.section11 div').animate({left:800}) 
-                    .animate({top:400})
-                    .animate({width:300,height:300})
-                    .animate({top:0})
-                    .animate({left:0})
-                    .animate({width:100,height:100})
-        })
-    }
 
     // jQuery 创建添加节点
     function fun12(){
@@ -575,7 +541,6 @@
             $('.section12 div').before($("p"));
 
     }
-    
     
     // 城市选择
     function fun13(){
